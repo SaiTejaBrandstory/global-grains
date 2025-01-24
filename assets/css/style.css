@@ -478,6 +478,9 @@
         background: #C23900;
         color: #FFFFFF !important;
     }
+    .image-carousel .slick-slide img{
+        width: 100%;
+    }
 }
 
 /* Join Us Section */
