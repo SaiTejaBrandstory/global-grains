@@ -11,19 +11,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
 $(document).ready(function(){
     $('.image-carousel').slick({
-        infinite: true,      // Infinite loop
-        slidesToShow: 1,     // Show 1 image at a time
-        slidesToScroll: 1,   // Scroll 1 image at a time
-        autoplay: true,      // Auto-scrolling enabled
-        autoplaySpeed: 2000, // 2-second interval
-        arrows: false,       // Hide arrows
-        dots: false,         // Hide dots
-        fade: true,          // Use fade effect
-        cssEase: 'linear',   // Smooth transition
-        centerMode: true,    // Center the active image
-        focusOnSelect: false, // Ensure the active image stays centered
-        pauseOnHover: false, // Prevent pausing on hover
-        pauseOnFocus: false  // Prevent pausing when focused
+        infinite: true,      
+        slidesToShow: 1,     
+        slidesToScroll: 1,   
+        autoplay: true,      
+        autoplaySpeed: 2000, 
+        arrows: false,       
+        dots: false,         
+        fade: true,          
+        cssEase: 'linear',   
+        centerMode: true,    
+        focusOnSelect: false, 
+        pauseOnHover: false, 
+        pauseOnFocus: false,
+        draggable: false,       // Disable mouse drag
+        swipe: false,           // Disable touch swipe
+        touchMove: false        // Prevent touch-based movement
     });
 });
 
@@ -42,6 +45,9 @@ $(document).ready(function(){
         arrows: false,
         fade: true,
         speed: 800,
-        cssEase: 'linear'
+        cssEase: 'linear',
+        draggable: false,       // Disable mouse drag
+        swipe: false,           // Disable touch swipe
+        touchMove: false        // Prevent touch-based movement
     });
 });
