@@ -116,11 +116,26 @@
 }
 
 .trade-info-section .trade-card-body {
+    position: relative; /* Required for absolute positioning of the pseudo-element */
     padding: 20px;
-    flex-grow: 1; 
+    flex-grow: 1;
     border-radius: 20px;
-    box-shadow: 0px 8px 2px 0px #ccc9c940;
+    background: white; /* Ensure background is visible */
 }
+
+.trade-info-section .trade-card-body::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* Position below the card */
+    left: 0;
+    width: 100%;
+    height: 20px; /* Increase this value to make the shadow taller */
+    border-radius: 20px; /* Match the parent */
+    background: linear-gradient(to bottom, rgba(204, 201, 201, 0.4), rgba(255, 255, 255, 0)); /* Gradient effect */
+    filter: blur(8px); /* Softens the shadow */
+    z-index: -1; /* Ensures it stays behind the element */
+}
+
 
 .trade-card-title {
     font-family: 'Playfair Display', serif;
@@ -133,7 +148,7 @@
 }
 
 .trade-card-text {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 400;
     line-height: 17.5px;
     text-align: center;
@@ -200,11 +215,25 @@
     margin: 0 10px;
     min-width: 350px; /* Adjusted for better responsiveness */
     max-width: 450px; /* Prevents overflow */
-    box-shadow: 0px 8px 2px 0px #ccc9c940;
-    overflow: hidden;
     flex-shrink: 0; /* Prevents shrinking */
     border: 1px solid rgba(0, 0, 0, 0.1); /* 50% transparent */
+    position: relative; /* Ensures the pseudo-element is positioned relative to this */
+    overflow: visible; /* Allow the pseudo-element to extend outside */
 }
+
+.carousel-item::after {
+    content: "";
+    position: absolute;
+    bottom: -15px; /* Push it outside the bottom of the item */
+    left: 0;
+    width: 100%;
+    height: 20px; /* Height of the shadow */
+    background: linear-gradient(to bottom, rgba(204, 201, 201, 0.65), rgba(255, 255, 255, 0)); /* Gradient shadow */
+    filter: blur(8px); /* Softens the shadow */
+    border-radius: 0 0 10px 10px; /* Matching bottom border radius of the item */
+    z-index: -1; /* Keeps it behind the item */
+}
+
 
 /* Image Styling */
 .carousel-item img {
@@ -368,22 +397,21 @@
 
 .btn-get-started {
     color: #FFFFFF;
-    background-color: #A9D18E;
-    border: 1px solid #A9D18E !important;
+    background-color: #51842F;
+    border: 1px solid #51842F !important; /* Green border */
     padding: 10px 30px;
     border-radius: 10px;
     font-size: 16px;
     font-weight: 700;
     line-height: 20px;
     text-align: center;
-    transition: all 0.3s ease-in-out; /* Smooth transition */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth transition */
 }
 
 .btn-get-started:hover {
-    color: #A9D18E;
+    color: #51842F;
     background-color: #FFFFFF;
-    border: 1px solid #A9D18E !important;
-    transform: scale(1.05); /* Slightly enlarge */
+    transform: none; /* Remove scale effect */
 }
 
 
@@ -391,6 +419,7 @@
     color: #000000;
     font-size: 16px;
     font-weight: 400;
+    margin-left: 20px;
     text-decoration: underline;
 }
 
@@ -512,15 +541,30 @@
 
 /* Card Styling */
 .text-section .card {
-    border: 1px solid rgba(0, 0, 0, 0.1); /* 50% transparent */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Transparent border */
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     height: 100%;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     background: white;
-    box-shadow: 0px 8px 2px 0px #ccc9c940;
+    position: relative; /* For positioning the pseudo-element */
+    overflow: visible; /* Allow the pseudo-element to extend outside */
 }
+
+.text-section .card::after {
+    content: "";
+    position: absolute;
+    bottom: -20px; /* This pushes the shadow outside the bottom of the card */
+    left: 0;
+    width: 100%;
+    height: 20px; /* Height of the shadow */
+    background: linear-gradient(to bottom, rgba(204, 201, 201, 0.5), rgba(255, 255, 255, 0)); /* Gradient shadow */
+    filter: blur(8px); /* Softens the shadow */
+    border-radius: 0 0 20px 20px; /* Match the card's bottom border-radius */
+    z-index: 1; /* Ensure it stays behind the card */
+}
+
 
 .text-section .card:hover {
     transform: translateY(-5px);
@@ -544,7 +588,7 @@
 
 /* Card Text */
 .text-section .card-text {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
     line-height: 24px;
     text-align: center;
@@ -686,9 +730,9 @@
     box-shadow: none !important;
 }
 
-[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled){
+/* [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled){
     border: none !important;
-}
+} */
 
 
 @media (max-width: 768px) {
@@ -755,3 +799,4 @@
         font-size: 14px !important;
     }
 }
+
