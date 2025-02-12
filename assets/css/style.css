@@ -86,7 +86,7 @@
 .hero-title , .hero-span{
     font-family: 'Playfair Display', serif;
     font-size: 64px;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 85.31px;
     text-align: center;
     text-underline-position: from-font;
@@ -120,22 +120,9 @@
     padding: 20px;
     flex-grow: 1;
     border-radius: 20px;
+    box-shadow: 0px 10px 7.7px 0px #00000012;
     background: white; /* Ensure background is visible */
 }
-
-.trade-info-section .trade-card-body::after {
-    content: "";
-    position: absolute;
-    top: 100%; /* Position below the card */
-    left: 0;
-    width: 100%;
-    height: 20px; /* Increase this value to make the shadow taller */
-    border-radius: 20px; /* Match the parent */
-    background: linear-gradient(to bottom, rgba(204, 201, 201, 0.4), rgba(255, 255, 255, 0)); /* Gradient effect */
-    filter: blur(8px); /* Softens the shadow */
-    z-index: -1; /* Ensures it stays behind the element */
-}
-
 
 .trade-card-title {
     font-family: 'Playfair Display', serif;
@@ -148,9 +135,9 @@
 }
 
 .trade-card-text {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 400;
-    line-height: 17.5px;
+    line-height: 24.15px;
     text-align: center;
     color: #000000;
     max-width: 200px;
@@ -203,7 +190,13 @@
     flex-wrap: nowrap;
     width: max-content;
     animation: scrollLeft 60s linear infinite; /* Slow continuous scroll */
+    transition: animation-play-state 0.3s ease; /* Smooth transition for pausing */
 }
+
+.carousel-wrapper:hover {
+    animation-play-state: paused; /* Pause animation on hover */
+}
+
 
 /* Individual Carousel Item */
 .carousel-item {
@@ -219,20 +212,10 @@
     border: 1px solid rgba(0, 0, 0, 0.1); /* 50% transparent */
     position: relative; /* Ensures the pseudo-element is positioned relative to this */
     overflow: visible; /* Allow the pseudo-element to extend outside */
+    box-shadow: 0px 10px 7.7px 0px #00000012;
 }
 
-.carousel-item::after {
-    content: "";
-    position: absolute;
-    bottom: -15px; /* Push it outside the bottom of the item */
-    left: 0;
-    width: 100%;
-    height: 20px; /* Height of the shadow */
-    background: linear-gradient(to bottom, rgba(204, 201, 201, 0.65), rgba(255, 255, 255, 0)); /* Gradient shadow */
-    filter: blur(8px); /* Softens the shadow */
-    border-radius: 0 0 10px 10px; /* Matching bottom border radius of the item */
-    z-index: -1; /* Keeps it behind the item */
-}
+
 
 
 /* Image Styling */
@@ -349,6 +332,7 @@
 .section-title {
     font-family: 'Playfair Display', serif !important;
     font-size: 48px;
+    line-height: 63.98px;
     font-weight: 700;
     color: #000000;
     padding: 15px 0;
@@ -399,9 +383,9 @@
     color: #FFFFFF;
     background-color: #51842F;
     border: 1px solid #51842F !important; /* Green border */
-    padding: 10px 30px;
+    padding: 10px 40px;
     border-radius: 10px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
     line-height: 20px;
     text-align: center;
@@ -548,22 +532,11 @@
     height: 100%;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     background: white;
+    box-shadow: 0px 10px 7.7px 0px #00000012;
     position: relative; /* For positioning the pseudo-element */
     overflow: visible; /* Allow the pseudo-element to extend outside */
 }
 
-.text-section .card::after {
-    content: "";
-    position: absolute;
-    bottom: -20px; /* This pushes the shadow outside the bottom of the card */
-    left: 0;
-    width: 100%;
-    height: 20px; /* Height of the shadow */
-    background: linear-gradient(to bottom, rgba(204, 201, 201, 0.5), rgba(255, 255, 255, 0)); /* Gradient shadow */
-    filter: blur(8px); /* Softens the shadow */
-    border-radius: 0 0 20px 20px; /* Match the card's bottom border-radius */
-    z-index: 1; /* Ensure it stays behind the card */
-}
 
 
 .text-section .card:hover {
@@ -581,6 +554,7 @@
     font-family: 'Playfair Display', serif !important;
     font-size: 22px;
     font-weight: 700;
+    line-height: 31.99px;
     text-align: center;
     color: #000000;
     margin-bottom: 15px;
@@ -588,7 +562,7 @@
 
 /* Card Text */
 .text-section .card-text {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 400;
     line-height: 24px;
     text-align: center;
@@ -680,7 +654,7 @@
 
 
 .crops-section {
-    padding: 100px 0 0;
+    padding: 50px 0 0;
 }
 
 .crop-card {
@@ -730,11 +704,238 @@
     box-shadow: none !important;
 }
 
+.btn-lb{
+    background-color: #FFFFFF;
+    color: #C23900;
+    padding: 10px 35px !important;
+    border: 1px solid #C23900 !important;
+}
+
+.btn-lb:hover{
+    background-color: #C23900;
+    color: #FFFFFF;
+}
+
+.signin-centre{
+    margin-left: 0px ;
+}
+
+.partner-text{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 40px;
+}
 /* [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled){
     border: none !important;
 } */
 
 
+/* GTP Styles */
+
+.gtp-title, .gtp-span{
+    font-size: 48px;
+    line-height: 63.98px;
+}
+
+.gtp-card-text{
+    max-width: 350px;
+}
+
+.profit-section {
+    background-color: #F6F6F6;
+}
+
+.profit-box {
+    background-color: #FFFFFF;
+    padding: 40px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000000;
+}
+
+.profit-subtitle {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28.98px;
+    color: #000000;
+}
+
+.profit-title {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 53.32px;
+    color: #000000;
+}
+
+.profit-description {
+    max-width: 461px;
+    margin: 0 auto;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24.15px;
+    color: #000000;
+}
+
+.profit-button {
+    width: 50%;
+    margin-top: 20px;
+}
+
+.section-gtp-title{
+    font-size: 40px;
+    line-height: 53.32px;
+}
+
+.gtp-image-slider img {
+    height: 400px;
+    margin-bottom: 0px;
+}
+
+.gtp-joinus-title{
+    max-width: 535px;
+}
+
+.text-section .gtp-card-text{
+    max-width: 391px;
+}
+
+.download-btn{
+    width: 35%;
+}
+
+.faq-section {
+    padding: 50px 0;
+}
+.faq-title {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48.3px;
+    text-align: left;
+    color: #000000;
+}
+.faq-description {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: left;
+    color: #000000;
+}
+.faq-div{
+    margin-bottom: 150px;
+}
+.faq-item {
+    margin-bottom: 25px;
+    border: 1px solid #000000;
+    box-shadow: 0px 6px 7.7px 0px #00000012;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 15px;
+    font-size: 24px;
+    line-height: 28.98px;
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+.faq-question i {
+    margin-left: 35px;
+    transition: transform 0.3s ease;
+}
+.faq-answer {
+    padding: 15px 40px 15px 15px;
+    font-size: 20px;
+    line-height: 24.15px;
+    display: none;
+    transition: all 0.3s ease-in-out;
+}
+.faq-item.active .faq-answer {
+    display: block;
+}
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+.faq-sub-div {
+    margin-top: 150px;
+}
+
+.training-button{
+    background-color: #FFFFFF;
+    color: #000000;
+    width: 100%;
+    padding: 10px 35px !important;
+    border: 1px solid #000000 !important;
+}
+
+.training-button:hover{
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+/* associates title */
+
+.associates-title{
+    margin: auto;
+    padding: 30px 0;
+    max-width: 620px;
+}
+
+.associates-title-p{
+    max-width: 764px;
+    margin: auto;
+}
+
+/* about us */
+
+.about-us {
+    background-image: url('../images/about-us.webp');
+    background-size: cover;
+    background-position: center;
+    padding: 75px 0 !important;
+}
+
+.about-us-header, .about-us-title{
+    color: #FFFFFF 
+}
+
+.about-us-header{
+    max-width: 735px;
+}
+
+.about-us-box{
+    max-width: 960px;
+}
+
+.about-us-link{
+    color: #C33E00;
+}
+
+@media (max-width: 768px) {
+    .faq-sub-div {
+        margin-top: 0px;
+    }  
+    .faq-div{
+        margin-bottom: 0px;
+    } 
+    .profit-button{
+        width: 90%;
+    }
+    .btn-get-started{
+        font-size: 16px;
+    }
+}
 @media (max-width: 768px) {
     h1, .hero-span {
         font-size: 48px !important;

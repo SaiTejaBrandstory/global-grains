@@ -9,6 +9,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.querySelectorAll(".faq-question").forEach(button => {
+    button.addEventListener("click", function () {
+        document.querySelectorAll(".faq-item").forEach(item => {
+            if (item !== this.parentElement) {
+                item.classList.remove("active");
+            }
+        });
+        this.parentElement.classList.toggle("active");
+    });
+});
+
 $(document).ready(function(){
     $('.image-carousel').slick({
         infinite: true,      
