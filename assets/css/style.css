@@ -884,6 +884,66 @@
     color: #FFFFFF;
 }
 
+.benefits .trade-card{
+    border-radius: 0;
+}
+
+.benefits .trade-card-body{
+    box-shadow: none;
+}
+
+.benefits .trade-card-text, .benefits .trade-card-title{
+    text-align: left;
+    padding: 10px 0px;
+    max-width: fit-content;
+}
+
+.benefits .trade-card {
+    position: relative;
+    padding: 20px;
+    border: 1px solid rgb(214, 213, 213); 
+    border-radius: 0;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.benefits .trade-card-body {
+    box-shadow: none;
+}
+
+.benefits .trade-card::before,
+.benefits .trade-card::after {
+    content: "";
+    position: absolute;
+    background: #000000;
+    transition: all 0.5s linear;
+}
+
+/* Top & Left Border */
+.benefits .trade-card::before {
+    width: 0;
+    height: 5px;
+    top: 0;
+    left: 0;
+}
+
+.benefits .trade-card::after {
+    width: 5px;
+    height: 0;
+    top: 0;
+    left: 0;
+}
+
+/* Animate on hover */
+.benefits .trade-card:hover::before {
+    width: 100%;
+}
+
+.benefits .trade-card:hover::after {
+    height: 100%;
+}
+
+
 /* associates title */
 
 .associates-title{
@@ -897,13 +957,22 @@
     margin: auto;
 }
 
+.benefits .trade-card-img {
+    padding: 0;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 50px;
+    height: auto;
+    width: 94px;
+}
+
 /* about us */
 
 .about-us {
     background-image: url('../images/about-us.webp');
     background-size: cover;
     background-position: center;
-    padding: 75px 0 !important;
+    padding: 125px 0 !important;
 }
 
 .about-us-header, .about-us-title{
@@ -934,6 +1003,9 @@
     }
     .btn-get-started{
         font-size: 16px;
+    }
+    .benefits .gtp-card-text{
+        max-width: fit-content;
     }
 }
 @media (max-width: 768px) {
