@@ -293,13 +293,13 @@
 
 
 
-.image-slider div {
+.image-slider div , .image-slider-home div {
     display: flex;
     align-items: flex-end; /* Pushes images to the bottom */
     height: 100%; /* Ensures full height */
 }
 
-.image-slider img {
+.image-slider img, .image-slider-home img {
     width: 100%; 
     height: 300px; 
     object-fit: contain; /* Ensures proper scaling */
@@ -313,7 +313,7 @@
     padding: 40px 0;
 }
 
-.image-slider {
+.image-slider , .image-slider-home {
     width: 100%;
     max-width: 500px;
 }
@@ -500,7 +500,7 @@
 
 /* Join Us Section */
 .join-us {
-    background-color: #F6F6F6;
+    background-color: #D9D9D9;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -706,13 +706,13 @@
 
 .btn-lb{
     background-color: #FFFFFF;
-    color: #C23900;
+    color: #51842F;
     padding: 10px 35px !important;
-    border: 1px solid #C23900 !important;
+    border: 1px solid #51842F !important;
 }
 
 .btn-lb:hover{
-    background-color: #C23900;
+    background-color: #51842F;
     color: #FFFFFF;
 }
 
@@ -743,7 +743,7 @@
 }
 
 .profit-section {
-    background-color: #F6F6F6;
+    background-color: #D9D9D9;
 }
 
 .profit-box {
@@ -773,7 +773,7 @@
 }
 
 .profit-description {
-    max-width: 461px;
+    max-width: 395px;
     margin: 0 auto;
     font-size: 20px;
     font-weight: 400;
@@ -797,7 +797,7 @@
 }
 
 .gtp-joinus-title{
-    max-width: 535px;
+    max-width: 670px;
 }
 
 .text-section .gtp-card-text{
@@ -884,10 +884,6 @@
     color: #FFFFFF;
 }
 
-.benefits .trade-card{
-    border-radius: 0;
-}
-
 .benefits .trade-card-body{
     box-shadow: none;
 }
@@ -902,25 +898,25 @@
     position: relative;
     padding: 20px;
     border: 1px solid rgb(214, 213, 213); 
-    border-radius: 0;
+    border-radius: 20px;
     transition: all 0.3s ease-in-out;
     overflow: hidden;
 }
 
-.benefits .trade-card-body {
-    box-shadow: none;
+.benefits .trade-card:hover {
+    transform: translateY(-5px);
 }
 
-.benefits .trade-card::before,
+/* .benefits .trade-card::before,
 .benefits .trade-card::after {
     content: "";
     position: absolute;
     background: #000000;
     transition: all 0.5s linear;
-}
+} */
 
 /* Top & Left Border */
-.benefits .trade-card::before {
+/* .benefits .trade-card::before {
     width: 0;
     height: 5px;
     top: 0;
@@ -932,16 +928,16 @@
     height: 0;
     top: 0;
     left: 0;
-}
+} */
 
 /* Animate on hover */
-.benefits .trade-card:hover::before {
+/* .benefits .trade-card:hover::before {
     width: 100%;
 }
 
 .benefits .trade-card:hover::after {
     height: 100%;
-}
+} */
 
 
 /* associates title */
@@ -994,6 +990,154 @@
 .association .trade-card-img{
     height: 205px;
 }
+
+.gpp-banner {
+    height: 300px;
+}
+
+.gtp-banner{
+    height: 250px;
+}
+
+
+/* Style for Slick arrows */
+.image-slider-home .slick-prev, 
+.image-slider-home .slick-next {
+    font-size: 32px;            /* 🔥 Bigger Arrow Size */
+    color: #51842F;             /* Green color */
+    background-color: #FFFFFF;
+    background: transparent;
+    border: 2px solid #51842F;  /* 🔥 Green border around arrows */
+    padding: 12px;              /* 🔥 More padding for better visibility */
+    border-radius: 50%;         /* 🔥 Make it circular */
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;                /* 🔥 Set width */
+    height: 45px;               /* 🔥 Set height */
+    transition: all 0.3s ease-in-out;
+}
+
+/* 🔥 Fix: Remove Default Text & Show Only Arrow Symbols */
+.image-slider-home .slick-prev:before, 
+.image-slider-home .slick-next:before {
+    font-size: 36px;
+    position: relative;
+    bottom: 3px;
+    background-color: #FFFFFF;
+    color: #51842F;
+    display: inline-block;
+    text-indent: 0;
+    font-family: sans-serif;
+}
+
+/* Left Arrow */
+.image-slider-home .slick-prev:before {
+    content: '\2039';  /* Unicode for ‹ (Left arrow) */
+}
+
+/* Right Arrow */
+.image-slider-home .slick-next:before {
+    content: '\203A';  /* Unicode for › (Right arrow) */
+}
+
+/* Hide ARIA label text (🔥 Important Fix) */
+.image-slider-home .slick-prev[aria-label], 
+.image-slider-home .slick-next[aria-label] {
+    font-size: 0;    /* Hides text from screen */
+    text-indent: -9999px; /* Moves it out of view */
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #FFFFFF;
+}
+
+/* Hover Effect */
+.image-slider-home .slick-prev:hover:before, 
+.image-slider-home .slick-next:hover:before {
+    color: #3A6021;  /* Darker green on hover */
+}
+
+/* Positioning */
+.image-slider-home .slick-prev {
+    left: -40px;
+}
+
+.image-slider-home .slick-next {
+    right: -40px;
+}
+
+/* Responsive: Adjust Arrow Size and Position for Mobile */
+@media (max-width: 768px) {
+    .image-slider-home .slick-prev, 
+    .image-slider-home .slick-next {
+        font-size: 18px; 
+    }
+
+    .image-slider-home .slick-prev {
+        left: -1%;
+    }
+
+    .image-slider-home .slick-next {
+        right: -1%;
+    }
+    .image-slider-home .slick-prev, .image-slider-home .slick-next {
+       width: 35px;
+       height: 35px;
+    }
+    .image-slider-home .slick-prev:before, .image-slider-home .slick-next:before {
+        font-size: 24px;
+        bottom: 2px;
+    }
+}
+
+.slick-dots li button:before{
+    display: none;
+}
+
+
+/* Default Slick Dots - Circular */
+.image-slider-home .slick-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px; /* Ensures spacing between dots */
+}
+
+.image-slider-home .slick-dots li {
+    width: auto; /* Let width adjust dynamically */
+    height: 12px;
+    transition: all 0.4s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Default Button Inside Dot */
+.image-slider-home .slick-dots li button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%; /* Default small dots */
+    background: #d1d1d1; /* Inactive color */
+    border: none;
+    transition: all 0.4s ease-in-out;
+}
+
+/* 🔥 Active Dot Expands to Green Bar Without Overlapping */
+.image-slider-home .slick-dots li.slick-active {
+    width: 35px; /* Expands the whole dot container */
+}
+
+.image-slider-home .slick-dots li.slick-active button {
+    width: 40px; /* Bar size */
+    height: 12px;
+    border-radius: 25px;
+    background: #51842F; /* Green active color */
+}
+
+
+
+
 
 @media (max-width: 768px) {
     .faq-sub-div {

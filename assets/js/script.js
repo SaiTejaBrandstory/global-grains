@@ -62,3 +62,25 @@ $(document).ready(function(){
         touchMove: false        // Prevent touch-based movement
     });
 });
+
+
+$(document).ready(function(){
+    $('.image-slider-home').on('init', function(event, slick){
+        console.log("Slick initialized");
+    }).slick({
+        autoplay: true,
+        autoplaySpeed: 2000,
+        infinite: true,        
+        pauseOnHover: false,   
+        pauseOnFocus: false,   
+        pauseOnDotsHover: false,
+        dots: true,            // Enable dots
+        arrows: true,          // Enable arrows
+        fade: true,
+        speed: 800,
+        cssEase: 'linear',
+        draggable: false,
+        swipe: false,
+        touchMove: false,
+    });
+});
