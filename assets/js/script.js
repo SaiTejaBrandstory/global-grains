@@ -84,3 +84,32 @@ $(document).ready(function(){
         touchMove: false,
     });
 });
+
+$(document).ready(function(){
+    $('.custom-carousel').slick({
+        slidesToShow: 3,              // Show 3 cards at once
+        slidesToScroll: 1,            // Scroll 1 card at a time
+        dots: true,                   // Enable dots for navigation
+        arrows: true,                 // Enable arrows for navigation
+        infinite: true,               // Enable infinite loop
+        autoplay: true,              // Disable autoplay
+        utoplaySpeed: 800,
+        prevArrow: '.custom-prev',    // Custom prev button
+        nextArrow: '.custom-next',    // Custom next button
+        pauseOnHover: false,          // Don't pause when hovering
+        responsive: [
+            {
+                breakpoint: 1400,
+                settings: {
+                    slidesToShow: 2  // Show 2 cards on large screens
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1  // Show 1 card on smaller screens
+                }
+            }
+        ]
+    });
+});
