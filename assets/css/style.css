@@ -293,6 +293,7 @@
 
 
 
+
 .image-slider div , .image-slider-home div {
     display: flex;
     align-items: flex-end; /* Pushes images to the bottom */
@@ -840,7 +841,7 @@
     background: none;
     border: none;
     padding: 15px;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 28.98px;
     font-weight: 700;
     text-align: left;
@@ -856,7 +857,7 @@
 }
 .faq-answer {
     padding: 15px 40px 15px 15px;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 24.15px;
     display: none;
     transition: all 0.3s ease-in-out;
@@ -1137,6 +1138,265 @@
 
 
 
+/* --------------------------- */
+
+        /* Custom Arrows Container */
+        .arrows-container {
+            position: relative;
+            margin-right: 4px;
+            margin-left: 0px;
+            height: 100%; /* Ensures the container fills the section */
+        }
+
+        /* Custom Arrows */
+        .custom-prev, .custom-next {
+            position: absolute;
+            top: calc(100% - 50%);  /* Place the arrows at 50% from the bottom of the container */
+            transform: translateY(-50%);
+            background: green;
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1000;
+            border-radius: 50%;
+        }
+
+        .custom-prev {
+            left: -3%; /* Position the left arrow at 1% from the left */
+        }
+
+        .custom-next {
+            right: -3%; /* Position the right arrow at 1% from the right */
+        }
+
+        .custom-prev:hover, .custom-next:hover {
+            background: darkgreen;
+        }
+
+        /* Card Layout */
+        .custom-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            padding: 10px 15px;
+            border: 2px solid #ddd;
+            background: #fff;
+            margin: 0 10px; /* Space between cards */
+            border-radius: 10px; /* Add border-radius to cards */
+            height: 300px; /* Ensure all cards have the same height */
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+            flex-direction: row; /* Arrange image on left and text on the right */
+            display: flex;
+        }
+
+        /* Card Image */
+        .custom-card img {
+            max-width: 150px;
+            height: auto;
+            margin-right: 20px; /* Space between image and text */
+            border-radius: 10px; /* Ensure image has rounded corners */
+            object-fit: cover; /* Maintain aspect ratio without stretching */
+        }
+
+        .custom-card .card-text {
+            flex-grow: 1; /* Make the text fill the remaining space */
+        }
+
+        /* Ensure No Empty Space Between Cards */
+        .custom-carousel .slick-track {
+            display: flex;
+            width: 100%;
+        }
+
+        .custom-carousel .custom-card {
+            flex: 0 0 auto;  /* Prevent cards from growing and shrinking */
+            width: 50%;    /* Cards should take 50% of the container width */
+            margin-right: 0px;  /* Remove any gap between cards */
+        }
+
+        .custom-carousel .slick-slide {
+            margin: 5px;
+            display: flex;  /* Ensure each slide occupies its full space */
+        }
+
+        /* Custom Dots Styling */
+        .slick-dots {
+            margin-top: 20px; /* Add space above the dots */
+            display: flex;
+            bottom: -45px;
+            justify-content: center; /* Center dots horizontally */
+            gap: 8px;
+        }
+
+        .slick-dots li {
+            list-style-type: none;
+            width: 12px;
+            height: 12px;
+            background: #D3D3D3;
+            border-radius: 25px;
+        }
+
+        .slick-dots button {
+            background-color: grey;
+            border: none;
+            width: 8px; /* Reduced width */
+            height: 8px; /* Reduced height */
+            border-radius: 50%;
+            padding: 5px;
+            cursor: pointer;
+            opacity: 0.6; /* Reduced opacity */
+        }
+
+        /* .slick-dots button:hover, .slick-dots .slick-active button {
+            background-color: green; 
+        } */
+
+        .cards{
+            margin-bottom: 100px;
+        }
+
+        .slick-dots li button {
+            width: 12px;
+            height: 12px;
+        }
+
+        /* Hide the default dots */
+.slick-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Adjust gap between dots */
+}
+
+/* Style for each dot */
+.slick-dots li {
+    list-style-type: none;
+    width: 12px;
+    height: 12px;
+    background: #D3D3D3; /* Light grey for inactive dots */
+    border-radius: 50%;
+    transition: all 0.3s ease; /* Smooth transition for color */
+}
+
+/* Active state: Style the active dot as a bar */
+.slick-dots li.slick-active {
+    width: 40px; /* Adjust width for active bar */
+    height: 12px; /* Adjust height for bar */
+    background-color: green; /* Active dot color (bar) */
+    border-radius: 50px; /* Slight rounding of the bar */
+}
+
+/* Hide arrows on small screens */
+@media (max-width: 768px) {
+    .custom-prev, .custom-next {
+        display: none !important;
+    }
+}
+
+/* Card Layout */
+.custom-card {
+    display: flex;
+    flex-direction: row; /* Arrange image on left and text on the right */
+    align-items: flex-start; /* Align items at the top */
+    justify-content: flex-start;
+    text-align: left;
+    padding: 15px;
+    border: 2px solid #ddd;
+    background: #fff;
+    margin: 0 10px; /* Space between cards */
+    border-radius: 10px; /* Add border-radius to cards */
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    height: auto; /* Allow the card to adjust height based on content */
+    flex-grow: 1; /* Ensure all cards take up the same height */
+    overflow: hidden; /* Prevent overflow */
+    box-shadow: 0px 4px 2px 0px #00000012;
+}
+
+/* Card Image */
+.custom-card img {
+    max-width: 150px;
+    height: auto;
+    margin-right: 20px; /* Space between image and text */
+    border-radius: 10px; /* Ensure image has rounded corners */
+    object-fit: cover; /* Maintain aspect ratio without stretching */
+}
+
+/* Card Text */
+.custom-card .card-text {
+    flex-grow: 1; /* Allow the text to take up remaining space */
+    white-space: normal; /* Allow text to wrap */
+    overflow: visible; /* Ensure text does not overflow */
+    margin-top: 0; /* Align text to top */
+}
+
+/* Ensure Cards Maintain Same Height in Large Screen */
+.custom-carousel .slick-track {
+    display: flex;
+    width: 100%;
+}
+
+.custom-carousel .custom-card {
+    flex: 0 0 auto; /* Prevent cards from shrinking */
+    width: 33%; /* Adjust cards to fit 3 per row */
+}
+
+/* Stack image and text on small screens */
+@media (max-width: 768px) {
+    .custom-card {
+        flex-direction: column; /* Stack the image and text vertically */
+        height: auto; /* Allow height to adjust automatically */
+    }
+
+    .custom-card img {
+        margin-right: 0; /* Remove space between image and text */
+        margin-bottom: 15px; /* Add space between image and text */
+    }
+
+    .custom-card .card-text {
+        white-space: normal; /* Allow text to wrap */
+    }
+
+    .custom-carousel .custom-card {
+        width: 100%; /* Full width of container on small screens */
+    }
+}
+
+
+
+
+
+
+.footer .footer-link {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+}
+.footer .footer-link:hover {
+    color: #ddd; /* Light color on hover */
+}
+.footer .rights {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .footer .terms {
+        display: block;
+        margin-top: 10px;
+    }
+    .footer .footer-link {
+        display: block; /* Stack links on small screens */
+        margin: 10px 0;
+    }
+}
+
+
 
 
 @media (max-width: 768px) {
@@ -1162,6 +1422,9 @@
     .faq-question {
         font-size: 18px;
         line-height: 24px;
+    }
+    .gtp-banner, .gpp-banner{
+        height: auto;
     }
 }
 @media (max-width: 768px) {
@@ -1228,4 +1491,5 @@
         font-size: 14px !important;
     }
 }
+
 
